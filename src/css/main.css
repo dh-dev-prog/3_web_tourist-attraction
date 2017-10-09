@@ -1,0 +1,102 @@
+/* Base */
+
+body {
+  font-size: 16px;
+
+}
+body, h1, h2, h3, h4, h5 {
+  font-family: 'Lato', sans-serif;
+  padding: 40px;
+}
+a,
+a:hover {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Layout */
+
+.page {
+  width: 95%;
+  margin: 0 auto;
+  background-color: #dedede;
+}
+
+/* Colors */
+
+.bg-dark {
+  background-color: #323232;
+}
+.active,
+.hover-primary:hover {
+  background: linear-gradient(to right top, #0b85a2, #0d98ba);
+}
+/* Main-nav */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-left: 40px;
+  border-radius: 5px 5px 0 0;
+}
+.brand-logo {
+  display: inline-block;
+  width: 3em;
+}
+.brand-text {
+  font-family: 'Gloria Hallelujah', cursive;
+}
+.main-nav-list {
+  margin: 0;
+  margin-left: auto;
+  list-style: none;
+}
+.main-nav-item {
+  float: left;
+}
+.main-nav-link {
+  padding: 15px 20px;
+}
+.main-nav-item:last-child:hover .main-nav-link {
+  border-radius: 0 5px 0 0;
+}
+
+/* Banner */
+
+.banner {
+  min-height: 300px;
+  overflow: hidden;
+}
+.banner-carousel {
+  position: relative;
+  display: flex;
+  width: 300%;
+  min-height: 300px;
+  overflow: hidden;
+}
+.banner-carousel-item {
+  position: absolute;
+  min-height: 300px;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+.banner-carousel-item[data-item-number="1"] {
+  background: url('../images/iceland_carousel_1.jpg');
+  background-position: left;
+
+}
+.banner-carousel-item[data-item-number="2"] {
+  background: url('../images/iceland_carousel_2.jpg');
+  background-position: 0 -160px;
+}
+.banner-carousel-item[data-item-number="3"] {
+  background: url('../images/iceland_carousel_5.jpg');
+  background-position: -333px -490px;
+}
