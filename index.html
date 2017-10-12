@@ -23,9 +23,9 @@
           </a>
         </div>
         <ul class="main-nav-list">
-          <li class="main-nav-item"><a class="main-nav-link hover-primary active" href="#">Relax</a></li>
-          <li class="main-nav-item"><a class="main-nav-link hover-primary" href="#">Watch</a></li>
-          <li class="main-nav-item"><a class="main-nav-link hover-primary" href="#">Extreme</a></li>
+          <li class="main-nav-item"><a class="main-nav-link hover-primary active" href="#surf">Surf</a></li>
+          <li class="main-nav-item"><a class="main-nav-link hover-primary" href="#ride">Ride</a></li>
+          <li class="main-nav-item"><a class="main-nav-link hover-primary" href="#spots">Spots</a></li>
         </ul>
       </nav>
 
@@ -45,7 +45,7 @@
 
       <main class="mt-5">
 
-        <section class="px-3 py-4 text-dark my-5">
+        <section id="surf" class="px-3 py-4 text-dark mt-5 mb-3">
           <div class="container-fluid">
             <div class="row">
               <div class="col-8">
@@ -55,7 +55,22 @@
                 </p>
               </div>
               <div class="col-4">
-                <img class="img-fluid" src="src/images/iceland_small_2.jpg">
+                <img class="img-fluid" src="src/images/iceland_small_2.jpg" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="ride" class="px-3 py-3 text-dark mb-5">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-4">
+                <img class="img-fluid" src="src/images/iceland_small_1.jpg" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+              </div>
+              <div class="col-8">
+                <h2>Ride to the Unknown</h2>
+                <p class="text-justify pr-5">
+                  Shorebreak rain marine layer duck diving wobbly full mad air reverse surfline backside stick fair-good. Pose on the nose Ocean Beach turning on marine layer Mick Fanning set wave. Shack loc rippin slabbing free fall. Nose pick paddle split the peak insider pump wobble barnacle ripable sick barrels. Split the peak rights dredging crumble air drop. Oil water surf fighting for the peak ripable casual deadly hack.                </p>
               </div>
             </div>
           </div>
@@ -67,39 +82,31 @@
 
         <div style="clear:both"></div>
 
-        <section class="px-3 py-4 text-dark my-5">
+        <section id="spots" class="px-3 py-3 text-dark my-5">
           <div class="container-fluid">
             <div class="row">
-              <div class="col-4">
-                <img class="img-fluid" src="src/images/iceland_small_1.jpg" style="box-shadow: 1px 1px 2px 2px">
-              </div>
               <div class="col-8">
-                <h2>Ride to the Unknown</h2>
+                <h2>Iceland Spots</h2>
                 <p class="text-justify pr-5">
-                  Fanning blonde rigs glassy, rookie section stall lineup wind swell foam ball. Full mad air reverse he's a legend offshore transition snap elevator drop blonde rigs. Ridin' the foam ball Dane Reynolds doggy door too deep drifting the tail barn dog! Triple overhead surf inside pig dog vertical soft lip inside. Ride spit big finner stale vertical backside hack quad. Round house cutty Dane whips one offshore green room Nat Young round house cutty pitter vertical backside hack.
-                </p>
+                  Shorebreak rain marine layer duck diving <strong>Hofn</strong> wobbly full <strong>Vik</strong> mad air reverse surfline backside stick fair-good. <strong>Grotta</strong> Pose on the nose Ocean Beach turning on marine <strong>Breidavik</strong> layer Mick Fanning set wave. Shack loc rippin slabbing free fall. Nose pick paddle split <strong>Dalvik</strong> the peak insider pump wobble barnacle ripable sick barrels. Split the peak rights dredging crumble air drop. Oil water surf fighting for the peak ripable casual deadly hack. </p>
+              </div>
+              <div class="col-4">
+                <div id="map" style="width: 100%;height:300px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);"  >My map will go here</div>
               </div>
             </div>
           </div>
         </section>
 
-        <div id="map" style="width: 100%;height:300px;">My map will go here</div>
-
       </main>
 
       <footer style="border-radius: 0 0 5px 5px" class="my-5 bg-dark">
-
         <a class="main-nav-brand" href="#home">
           <img class="brand-logo" src="src/images/iceland_icon_round.png">
           <span class="brand-text">Iceland Surf</span>
         </a>
-
       </footer>
 
-
-    </div>
-
-
+    </div><!--end of page-->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -108,22 +115,38 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <script src="src/javascript/main.js"></script>
     <script>
-      function myMap() {
-          var mapOptions = {
-              center: new google.maps.LatLng(64.996788, -18.621012),
-              zoom: 5,
-              mapTypeId: google.maps.MapTypeId.roadmap
-          }
-          var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-          var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(63.418603, -19.005860),
-            title:"Vik"
-          });
 
-          // To add the marker to the map, call setMap();
-          marker.setMap(map);
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 4,
+        center: {lat: 64.996788, lng: -18.621012}
+      });
+      // Create an array of alphabetical characters used to label the markers.
+      var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      // Add some markers to the map.
+      // Note: The code uses the JavaScript Array.prototype.map() method to
+      // create an array of markers based on a given "locations" array.
+      // The map() method here has nothing to do with the Google Maps API.
+      var markers = locations.map(function(location, i) {
+        return new google.maps.Marker({
+          position: location,
+          label: labels[i % labels.length],
+          title: location[2]
+        });
+      });
+      // Add a marker clusterer to manage the markers.
+      var markerCluster = new MarkerClusterer(map, markers,
+          {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
       }
+      var locations = [
+        {lat: 64.249850, lng: -15.202246, title: "Hofn"},
+        {lat: 64.164721, lng: -22.021571, title: "Grotta"},
+        {lat: 63.418811, lng: -19.005897, title: "Vik"},
+        {lat: 65.543433, lng: -24.366163, title: "Breidavik"},
+        {lat: 66.071563, lng: -18.653884, title: "Dalvik"}
+      ]
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9fBdfZC8qPNlADZWYP2a7oUA1TqTjCZM&callback=myMap"></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9fBdfZC8qPNlADZWYP2a7oUA1TqTjCZM&callback=initMap"></script>
   </body>
 </html>

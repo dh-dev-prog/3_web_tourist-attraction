@@ -19,6 +19,9 @@ img {
   max-width: 100%;
   height: auto;
 }
+strong {
+  text-decoration: underline;
+}
 
 /* Layout */
 
