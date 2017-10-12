@@ -74,7 +74,19 @@ strong {
 .main-nav-item:last-child:hover .main-nav-link {
   border-radius: 0 5px 0 0;
 }
-
+@media only screen and (max-width: 500px) {
+  .main-nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  .main-nav-list,
+  .main-nav-item {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
 /* Banner */
 
 .banner {
@@ -97,30 +109,37 @@ strong {
   background-repeat: no-repeat;
 }
 .banner-carousel-item img {
-  position: absolute;
   max-width: 100%;
 }
 
-.banner-carousel-item[data-item-number="1"] {
-  top: -16em;
-}
-.banner-carousel-item[data-item-number="2"] {
-  top: -10em;
-}
-.banner-carousel-item[data-item-number="3"] {
-  top: -17.5em;
+@media only screen and (min-width: 500px) {
+  .banner-carousel-item[data-item-number="1"] {
+    bottom:0;
+  }
+  .banner-carousel-item[data-item-number="2"] {
+    top: -15%;
+  }
+  .banner-carousel-item[data-item-number="3"] {
+    bottom: -15%;
+  }
 }
 
-/*.banner-carousel-item[data-item-number="1"] {
-  display: block;
-  background: url('../images/iceland_carousel_1_r.jpg');
-  background-position: 0 -250px;
+
+/* Main */
+
+main {
+  margin-top: 1em;
 }
-.banner-carousel-item[data-item-number="2"] {
-  background: url('../images/iceland_carousel_2.jpg');
-  background-position: 0 -160px;
+@media only screen and (min-width: 1000px) {
+  main {
+    margin-top: 3em;
+  }
 }
-.banner-carousel-item[data-item-number="3"] {
-  background: url('../images/iceland_carousel_5_r.jpg');
-  background-position: 0 -250px;
-}*/
+@media only screen and (max-width: 768px) {
+  .invert-1 {
+    order: 2;
+  }
+  .invert-2 {
+    order: 1;
+  }
+}
