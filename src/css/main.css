@@ -112,7 +112,7 @@ strong {
   max-width: 100%;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 620px) {
   .banner-carousel-item[data-item-number="1"] {
     bottom:0;
   }
@@ -126,9 +126,7 @@ strong {
 
 
 /* Main */
-main {
-  margin-top: 0;
-}
+
 @media only screen and (min-width: 500px) {
   main {
     margin-top: 1em;
